@@ -20,7 +20,7 @@ spec:
             - /karpor
           args:
             - syncer
-            - --elastic-search-addresses=http://elasticsearch.{{ .Values.namespace }}.svc:{{ .Values.elasticsearch.port }}
+            - --elastic-search-addresses=http://elasticsearch.{{ .Values.namespace }}.svc.cluster.local:{{ .Values.elasticsearch.port }}
           env:
             - name: KUBECONFIG
               value: /etc/karpor/config

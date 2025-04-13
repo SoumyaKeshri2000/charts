@@ -42,8 +42,8 @@ spec:
       containers:
         - args:
             - --search-storage-type=elasticsearch
-            - --elastic-search-addresses=http://elasticsearch.{{ .Values.namespace }}.svc:{{ .Values.elasticsearch.port }}
-            - --etcd-servers=http://etcd.{{ .Values.namespace }}.svc:{{ .Values.etcd.port }}
+            - --elastic-search-addresses=http://elasticsearch.{{ .Values.namespace }}.svc.cluster.local:{{ .Values.elasticsearch.port }}
+            - --etcd-servers=http://etcd.{{ .Values.namespace }}.svc.cluster.local:{{ .Values.etcd.port }}
             - --secure-port={{ .Values.server.port }}
             - --client-ca-file=/etc/karpor/ca.crt
             - --service-account-signing-key-file=/etc/karpor/ca.key
